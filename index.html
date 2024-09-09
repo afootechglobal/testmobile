@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="ROBOTS" content="ALL">
+    <meta name="Engine" content="all">
+    <meta name="distribution" content="global">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="all-images/images/icon.png" rel="shortcut icon" type="image-png"/>
+
+    <link href="css/awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/icons-1.10.2/font/bootstrap-icons.css" type="text/css" rel="stylesheet" >
+    
+    <link rel="stylesheet" href="css/animate.css">
+
+    <script src="js/jquery-v3.6.1.min.js"></script>
+    <script src="js/load-assets.js"></script>
+
+   
+ 
+    <title>myApp</title>
+</head>
+<script>
+   _loadScript();
+   _loadCSS();
+   $(document).ready(function(){
+    $("#header-placeholder").load(websiteUrl+"/alert");
+});
+</script>
+    <div id="header-placeholder"></div>
+<body>
+    <div class="app">
+        <div class="body-div">
+            <div class="left-div">
+                <div class="top-div">
+                    <div class="form-div">
+                        <div class="header-div">
+                            <a href="">
+                                <div class="logo-div"><img src="all-images/images/logo.png" alt="Logo"></div>
+                            </a>
+                            <div class="contact-div"><i class="bi-refresh"></i></div>
+                            <div class="contact-div"><i class="bi-phone"></i></div>
+                            <div class="contact-div"><i class="bi-whatsapp"></i></div>
+                        </div>
+
+                        <div id="more-info">
+                            <div class="fill-form-div animated fadeInLeft" id="login_div">
+                                <h2 id="page-title">Log-In</h2>
+
+                                <div class="title-div"><i class="bi-envelope"></i> Email Address:<span>*</span></div>
+                                <input type="email" class="text-field" placeholder="Enter Your Email Address"
+                                    id="email" />
+
+                                <div class="title-div"><i class="bi-lock"></i> Password:<span>*</span></div>
+                                <input type="password" class="text-field" placeholder="Enter Your Password"
+                                    id="password" /><br />
+
+                                <span class="reset-password" id="text1" onclick="_nextPage('reset_password_info', 'text1');">Forgot
+                                    Password? </span>
+                                <button class="btn" type="button" id="login_btn" onclick="_logIn();"><i
+                                        class="bi-check"></i> LOG-IN</button>
+
+                            </div>
+
+                            <div class="fill-form-div " id="reset_password_info">
+                                <h2>Reset Password</h2>
+                                <div class="alert">
+                                    Provide your email address to continue
+                                </div>
+                                <div class="title-div"><i class="bi-envelope"></i> Email Address:<span>*</span></div>
+                                <input type="email" class="text-field" placeholder="Enter Your Email Address"
+                                    id="reset_pass_email" />
+
+                                <!-- <button class="btn" type="button" id="reset_password_btn"
+                                    onclick="_proceed_reset_password();"> PROCEED <i
+                                        class="bi-arrow-right"></i></button> -->
+                                        <button class="btn" type="button" id="reset_password_btn"
+                                        onclick="_getForm('form-content');"> PROCEED <i
+                                            class="bi-arrow-right"></i></button>
+    
+                                <div class="alert">
+                                    Have you already have an account? <span class="in" id="text2"
+                                        onclick="_nextPage('login_div', 'text2');">LOG-IN </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-div">
+                    <div class="div-in">Developed By: <a href="#" title="AfooTECH Global"
+                            target="_blank"><u><strong>AfooTECH Global</strong></u></a></div>
+                </div>
+            </div>
+
+
+
+
+            <div class="right-div">
+                <div class="cover-div animated zoomIn">
+                    <div class="div-in">
+                        <div class="logo-div"><img src="all-images/images/icon.png" alt="Logo"></div>
+                        <P>THE REDEEMED CHRISTIAN CHURCH OF GOD</P>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+  
+</body>
+
+</html>

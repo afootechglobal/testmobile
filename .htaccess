@@ -1,0 +1,100 @@
+#remove html file extension-e.g. https://example.com/file.html will become https://example.com/file
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+
+
+
+ErrorDocument 404 /
+ErrorDocument 500 /
+#RewriteEngine On
+#RewriteCond %{HTTPS} off [OR]
+#RewriteCond %{HTTP_HOST} ^www\. [NC]
+#RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+#RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+
+
+# browser requests html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html
+RewriteRule ^/?(.*)\.html$ /$1 [L,R=301]
+
+
+
+#Customize expires caching start - adjust the period according to your needs
+<IfModule mod_expires.c>
+  FileETag MTime Size
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript
+  ExpiresActive On
+  ExpiresByType text/html "access 600 seconds"
+  ExpiresByType application/xhtml+xml "access 600 seconds"
+  ExpiresByType text/css "access 1 month"
+  ExpiresByType text/javascript "access 1 month"
+  ExpiresByType text/x-javascript "access 1 month"
+  ExpiresByType application/javascript "access 1 month"
+  ExpiresByType application/x-javascript "access 1 month"
+  ExpiresByType application/x-shockwave-flash "access 1 month"
+  ExpiresByType application/pdf "access 1 month"
+  ExpiresByType image/x-icon "access 1 year"
+  ExpiresDefault "access 1 month"
+</IfModule>
+#Expires caching end
+
+
+
+
+# BEGIN Cache-Control Headers
+<IfModule mod_expires.c>
+  <IfModule mod_headers.c>
+    <filesMatch "\.(ico|jpe?g|png|gif|swf)$">
+      Header append Cache-Control "public"  
+    </filesMatch>
+    <filesMatch "\.(css)$">
+      Header append Cache-Control "public"
+    </filesMatch>
+    <filesMatch "\.(js)$">
+      Header append Cache-Control "private"
+    </filesMatch>
+    <filesMatch "\.(x?html?|html)$">
+      Header append Cache-Control "private, must-revalidate"
+    </filesMatch>
+  </IfModule>
+</IfModule>
+
+# html -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-html74” package as the default “html” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-html74 .html .html7 .phtml
+</IfModule>
+# html -- END cPanel-generated handler, do not edit
+
+# BEGIN cPanel-generated html ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel Multihtml INI Editor (Home >> Software >> Multihtml INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule html7_module>
+   html_flag display_errors Off
+   html_value max_execution_time 30
+   html_value max_input_time 60
+   html_value max_input_vars 1000
+   html_value memory_limit 256M
+   html_value post_max_size 8M
+   html_value session.gc_maxlifetime 1440
+   html_value session.save_path "/var/cpanel/html/sessions/ea-html74"
+   html_value upload_max_filesize 2M
+   html_flag zlib.output_compression Off
+</IfModule>
+<IfModule lsapi_module>
+   html_flag display_errors Off
+   html_value max_execution_time 30
+   html_value max_input_time 60
+   html_value max_input_vars 1000
+   html_value memory_limit 256M
+   html_value post_max_size 8M
+   html_value session.gc_maxlifetime 1440
+   html_value session.save_path "/var/cpanel/html/sessions/ea-html74"
+   html_value upload_max_filesize 2M
+   html_flag zlib.output_compression Off
+</IfModule>
+# END cPanel-generated html ini directives, do not edit
