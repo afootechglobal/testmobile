@@ -1,5 +1,5 @@
 
-var websiteUrl = 'http://192.168.43.159/testmobile';
+var websiteUrl = 'http://localhost/testmobile';
 
 function _loadScript() {
     $('<script>', { src: websiteUrl+'/js/scripts.js?v='+ new Date().getTime() }).appendTo('head');
