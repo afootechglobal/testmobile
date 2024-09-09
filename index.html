@@ -17,45 +17,20 @@
     <link rel="stylesheet" href="css/animate.css">
 
     <script src="js/jquery-v3.6.1.min.js"></script>
-    <script src="js/scripts.js"></script>
     <script src="js/load-assets.js"></script>
-
-   
- 
+    
     <title>myApp</title>
 </head>
 <script>
-   // _loadScript();
+   _loadScript();
    _loadCSS();
-//    $(document).ready(function(){
-//     $("#header-placeholder").load(websiteUrl+"/alert");
-// });
+   $(document).ready(function(){
+    $("#header-placeholder").load(websiteUrl+"/alert");
+});
 </script>
-    <!-- <div id="header-placeholder"></div> -->
+    <div id="header-placeholder"></div>
 <body>
-    <div id="get-more-div"></div>
-
-<div id="get-more-div-secondary"></div>
-    <div class="success-div animated bounceInDown" id="success-div">
-        <div><i class="bi-check-all"></i></div> 
-        PASSWORD RESET SUCCESSFUL!<br /> 
-        <span>Check your email to confirm.</span>
-    </div>
-    
-    
-    <div class="success-div animated bounceInDown" id="not-success-div">
-        <div><i class="bi-x-circle"></i></div> 
-        INVALID LOGIN PARAMETERS!<br /> 
-        <span>Please check the login detail.</span>
-    </div>
-    
-    
-    <div class="success-div animated bounceInDown" id="warning-div">
-        <div><i class="bi-exclamation-circle"></i></div> 
-        USER ERROR!<br /> 
-        <span>Fill The Fields To Continue</span>
-    </div>
-
+   
     <div class="app">
         <div class="body-div">
             <div class="left-div">
