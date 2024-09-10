@@ -1,6 +1,6 @@
 
-var websiteUrl = 'http://localhost/testmobile';
-//var websiteUrl = 'https://testmobile-ttech-globals-projects.vercel.app';
+//var websiteUrl = 'http://localhost/testmobile';
+var websiteUrl = 'https://testmobile-ttech-globals-projects.vercel.app';
 
 function _loadScript() {
     $('<script>', { src: websiteUrl+'/js/scripts.js?v='+ new Date().getTime() }).appendTo('head');
