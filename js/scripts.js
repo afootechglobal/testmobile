@@ -232,7 +232,6 @@ function _alertClose3() {
 function _getForm(page) {
 	$("#get-more-div").html('<div class="ajax-loader"><img src="'+websiteUrl+'/all-images/images/ajax-loader.gif"/></div>').fadeIn('fast');
 	$.ajax({
-		type: "POST",
 		url: websiteUrl+"/"+page,
 		cache: false,
 		success: function (html) {
