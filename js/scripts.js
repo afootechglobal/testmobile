@@ -270,6 +270,7 @@ function _getPageWithId(page, verify_user_fullname, verify_user_email) {
 
 
 function _logIn() {
+	alert('YES');
 	var email = $('#email').val();
 	var password = $('#password').val();
 	
