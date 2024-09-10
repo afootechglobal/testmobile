@@ -45,7 +45,9 @@ a{
     z-index: 100;
     display: none;
 }
-  .reg-successful-div{
+
+
+.reg-successful-div{
     width: 35%;
     min-height: 250px;
     text-align: center;
@@ -56,13 +58,11 @@ a{
     border-radius: 10px;
     margin: 145px auto;
     z-index: 200;
-
 }
 
 
-
 @media screen and (max-width: 800px){
-     .reg-successful-div{
+    .reg-successful-div{
      width: 60%;
     }
 }
@@ -421,17 +421,8 @@ color: #fff;
     color: rgba(236, 55, 30, 0.692);
     cursor: pointer;
 }
-.ajax-loader{
-    margin: 100px auto 0px auto;
-    width: 80%;
-    max-width: 300px;
-}
 
 
-
-.ajax-loader img{
-    width: 100%;
-}
 
 
 
